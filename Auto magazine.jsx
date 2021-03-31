@@ -4,18 +4,27 @@ function Main() {
   function start(path) {
     // check if there is a file
     if (path != null) {
-      // create the document
-      var doc = app.documents.add()
+      // render on existing open document
+      var doc = app.documents.item(0)
       var currViewPrefs = doc.viewPreferences.properties
+
       // to unify the script measerment in all devices
       doc.viewPreferences.horizontalMeasurementUnits =
         MeasurementUnits.MILLIMETERS
       doc.viewPreferences.verticalMeasurementUnits =
         MeasurementUnits.MILLIMETERS
 
-      // doc.documentPreferences.pageWidth = "165 mm"
+      // Adjust the In Design Template to the required size
+      doc.documentPreferences.pageWidth = '165 mm'
+      doc.documentPreferences.pageHeight = '233 mm'
 
-      // doc.documentPreferences.pageHeight = "233 mm"
+      var myMasterSpread = doc.masterSpreads.item(0)
+      var myMarginPreferences = myMasterSpread.pages.item(0).marginPreferences
+
+      myMarginPreferences.top = 18
+      myMarginPreferences.bottom = 13
+      myMarginPreferences.columnCount = 3
+      myMarginPreferences.columnGutter = 67.75
 
       // to identfy the color for descrption for each group
       var color = doc.colors.add({
@@ -26,13 +35,6 @@ function Main() {
       })
 
       // iniliaze a text frame with changable size to save the data column from the excel sheet.
-      var excelData_textframe = doc.pages[0].textFrames.add()
-      excelData_textframe.properties = {
-        textFramePreferences: {
-          autoSizingReferencePoint: 1953459301,
-          autoSizingType: 1752070000,
-        },
-      }
 
       var tmp_textframe = doc.pages[0].textFrames.add()
       tmp_textframe.properties = {
@@ -255,12 +257,12 @@ function Main() {
         // setting the sizes of Image frames
         var arrayOfSize = new Array()
         arrayOfSize = [
-          [18, 18, 74.54, 74.54],
-          [18, 120, 74.54, 181.84],
-          [110, 12.7, 171.84, 74.54],
-          [110, 120, 171.84, 181.84],
-          [206, 12.7, 267.84, 74.54],
-          [206, 120, 267.84, 181.84],
+          [18, 18, 68, 74.54],
+          [18, 120, 68, 181.84],
+          [110, 12.7, 160, 74.54],
+          [110, 120, 160, 181.84],
+          [206, 12.7, 256, 74.54],
+          [206, 120, 256, 181.84],
         ]
 
         // var arrayOfIconFrame = new Array();
@@ -792,19 +794,19 @@ function Main() {
               // we have 19 products and the user enter 4, the user will specify the maximum number
               //of products for all the groups and then based on that the system will stop loop until 4
 
-              // Number of products taken from K2 cell
-              var size = column1contentsArray11[1]
-              for (var s = 0; s <= size - 1; s++) {
+              //column1contentsArray11[i] array contains the number of Products for each product
+              //WARNING! Original logic proceeds after passing the respective number of products
+              for (var s = 0; s <= column1contentsArray11[i] - 1; s++) {
                 // loop through the array of products
 
                 // send each product to a function that will check if the image exists or not.
                 xTest = checkImage(tempArr2[s])
                 // alert(tempArr2[s])
 
-                // if exists but it's undefied the system will ignor it.
+                // if exists but it's undefied the system will ignore it.
 
                 if (xTest !== undefined) {
-                  // Now since we want the product imges to be side by side aligned
+                  // Now since we want the product images to be side by side aligned
                   // We have to postion the first image (0) in the same predeaclerd postion in the Arrayofsize
                   // and the other images (1)  and (2) for each time the system will postion the image it will add
                   // 15mm from the left and the right, so after postioning the images we going to redeclear the
@@ -845,12 +847,12 @@ function Main() {
               // because after the aligemnt for each group the postioning coordnate will be affected
 
               arrayOfSize = [
-                [18, 18, 74.54, 74.54],
-                [18, 120, 74.54, 181.84],
-                [110, 12.7, 171.84, 74.54],
-                [110, 120, 171.84, 181.84],
-                [206, 12.7, 267.84, 74.54],
-                [206, 120, 267.84, 181.84],
+                [18, 18, 68, 74.54],
+                [18, 120, 68, 181.84],
+                [110, 12.7, 160.84, 74.54],
+                [110, 120, 160, 181.84],
+                [206, 12.7, 256.84, 74.54],
+                [206, 120, 256.84, 181.84],
               ]
               //placing the description
               var rect1 = doc.pages[pageIdx].textFrames.add({
