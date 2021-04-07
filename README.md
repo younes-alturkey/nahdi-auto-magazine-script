@@ -1,11 +1,11 @@
-# Nahdi Marketing Department Promo Automation with Adobe Indesign JSX Script
+# Nahdi Marketing Department Promo Automation
 
 ![Logo](https://github.com/younes-alturkey/nahdi-mobile-rn-algolia/blob/master/nahdi-logo.png)
 
 <ul>
 <li>Read dynamic data from excel sheet</li>
-<li>render promo images and text acording to imported data</li>
-<li>Automate content placement</li>
+<li>Render promo images and text according to imported data</li>
+<li>Adobe Indesign JSX Script</li>
 </ul>
 
 # Supervison By
