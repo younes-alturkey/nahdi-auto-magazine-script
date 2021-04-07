@@ -1,3 +1,10 @@
+/*
+ * Authors
+ * Sarah Alshawkani
+ * Mohammed Alsayed
+ * Younes Alturkey
+ */
+
 Main()
 
 function Main() {
@@ -15,8 +22,8 @@ function Main() {
         MeasurementUnits.MILLIMETERS
 
       // Adjust the In Design Template to the required size
-      doc.documentPreferences.pageWidth = '165 mm'
-      doc.documentPreferences.pageHeight = '233 mm'
+      doc.documentPreferences.pageWidth = '210 mm'
+      doc.documentPreferences.pageHeight = '297 mm'
 
       var myMasterSpread = doc.masterSpreads.item(0)
       var myMarginPreferences = myMasterSpread.pages.item(0).marginPreferences
