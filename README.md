@@ -7,7 +7,7 @@
 ![Logo](https://github.com/younes-alturkey/nahdi-mobile-rn-algolia/blob/master/nahdi-logo.png)
 
 <ul>
-<li>Read dynamic data from excel sheet</li>
+<li>Read dynamic data from Excel sheet</li>
 <li>Render promo images and text according to imported data</li>
 <li>Adobe Indesign JSX Script</li>
 </ul>
