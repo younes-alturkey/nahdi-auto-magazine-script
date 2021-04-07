@@ -1,3 +1,7 @@
+# Live Demo
+
+![Live Demo](https://github.com/younes-alturkey/nahdi-auto-magazine-script/blob/main/demo.gif)
+
 # Nahdi Marketing Department Promo Automation
 
 ![Logo](https://github.com/younes-alturkey/nahdi-mobile-rn-algolia/blob/master/nahdi-logo.png)
